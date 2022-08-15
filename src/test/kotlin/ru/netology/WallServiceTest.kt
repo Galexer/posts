@@ -11,7 +11,7 @@ class WallServiceTest {
     @Test
     fun addPost() {
         val likes1 = Like(0,false,true)
-        val post1 = Post(0,0, 0,11-8-2022, likes = likes1)
+        val post1 = Post(0,0, 0,11_8_22, likes = likes1)
 
         val result = add(post1)
 
@@ -26,13 +26,13 @@ class WallServiceTest {
     @Test
     fun updateGood() {
         val likes1 = Like(userLikes = false, canLike = true)
-        add(Post(0,0, 0,11_08_2022, likes =  likes1))
+        add(Post(0,0, 0,11_8_22, likes =  likes1))
         val likes2 = Like(userLikes = false, canLike = true)
-        add(Post(0,1, 1,11_8_2022, likes = likes2))
+        add(Post(0,1, 1,11_8_22, likes = likes2))
         val likes3 = Like(0,false,true)
-        add(Post(0,2, 2,11_8_2022, likes =  likes3))
+        add(Post(0,2, 2,11_8_22, likes =  likes3))
 
-        val update = Post(3,2, 2,11-8-2022, "good post", likes =  likes3)
+        val update = Post(3,2, 2,11_8_22, "good post", likes =  likes3)
 
         val result = update(update)
         assertEquals(true, result)
@@ -41,12 +41,12 @@ class WallServiceTest {
     @Test
     fun updateFalse() {
         val likes1 = Like(userLikes = false, canLike = true)
-        add(Post(0,0, 0,11-8-2022, likes =  likes1))
+        add(Post(0,0, 0,11_8_22, likes =  likes1))
         val likes2 = Like(userLikes = false, canLike = true)
-        add(Post(0,1, 1,11-8-2022, likes = likes2))
+        add(Post(0,1, 1,11_8_22, likes = likes2))
         val likes3 = Like(userLikes = false, canLike = true)
 
-        val update = Post(3,2, 2,11-8-2022, "another good post", likes = likes3)
+        val update = Post(3,2, 2,11_8_22, "another good post", likes = likes3)
 
         val result = update(update)
         assertEquals(false, result)
