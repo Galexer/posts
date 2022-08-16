@@ -8,7 +8,7 @@ data class Post (
     val ownerId: Int,
     val fromId: Int,
     val date: Int,
-    val text: String = "text",
+    val text: String? = "text",
     val postType: String = "post",
     val isPinned: Boolean = false,
     val canEdit: Boolean = true,
