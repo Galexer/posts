@@ -3,6 +3,23 @@ package ru.netology
 fun main() {
 }
 
+sealed class Attachment(val type: String)
+
+data class AttachVideo(val video: Video) : Attachment("video")
+data class Video (val id: Int, val ownerId: Int, val title: String?, val player: String?)
+
+data class AttachPhoto(val photo: Photo) : Attachment("photo")
+data class Photo (val id: Int, val ownerId: Int, val text: String?, val photo: String?)
+
+data class AttachLink(val link: Link) : Attachment("link")
+data class Link(val url: String, val title: String?,val description: String?)
+
+data class AttachAudio(val audio: Audio) : Attachment("audio")
+data class Audio(val id: Int, val title: String?, val artist: String?, val url: String?)
+
+data class AttachDoc(val document: Document) : Attachment("document")
+data class Document(val id: Int, val ownerId: Int, val title: String?, val url: String?)
+
 data class Post (
     val id: Int,
     val ownerId: Int,
@@ -14,7 +31,8 @@ data class Post (
     val canEdit: Boolean = true,
     val friendsOnly: Boolean = false,
     val isFavorite: Boolean = false,
-    val likes: Like
+    val likes: Like,
+    val attachments: Array<Attachment> = emptyArray()
         )
 
 data class Like(
