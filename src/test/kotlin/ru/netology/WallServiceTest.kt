@@ -41,7 +41,7 @@ class WallServiceTest {
         val update = Post(3,2, 2,11_8_22, "good post", likes =  likes3)
 
         val result = update(update)
-        assertEquals(true, result)
+        assertTrue(result)
     }
 
     @Test
@@ -55,6 +55,6 @@ class WallServiceTest {
         val update = Post(3,2, 2,11_8_22, "another good post", likes = likes3)
 
         val result = update(update)
-        assertEquals(false, result)
+        assertFalse(result)
     }
 }

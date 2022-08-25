@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5f122c2d-d80e-4d3c-8201-06ad8ea077ba" name="Changes" comment="tests!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/netology/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/netology/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/netology/WallServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/netology/WallServiceTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +24,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="posts" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -37,11 +46,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -69,7 +73,7 @@
       <recent name="ru.netology" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.WallServiceTest.addPost">
+  <component name="RunManager" selected="Gradle.WallServiceTest">
     <configuration name="WallServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -171,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.WallServiceTest.addPost" />
         <item itemvalue="Gradle.WallServiceTest" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Gradle.WallServiceTest.updateFalse" />
         <item itemvalue="Gradle.WallServiceTest.updateGood" />
-        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.WallServiceTest.addPost" />
       </list>
     </recent_temporary>
   </component>
