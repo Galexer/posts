@@ -5,6 +5,7 @@ import org.junit.Before
 import org.junit.Test
 import ru.netology.WallService.add
 import ru.netology.WallService.update
+import ru.netology.WallService.createComment
 
 class WallServiceTest {
 
@@ -56,5 +57,22 @@ class WallServiceTest {
 
         val result = update(update)
         assertFalse(result)
+    }
+
+    @Test
+    fun createComment() {
+        val likes1 = Like(userLikes = false, canLike = true)
+        add(Post(0,0, 0,11_8_22, likes =  likes1))
+        val comment = Comment( fromId = 1, date = 25822, text = "comment")
+
+        val result = createComment(1 , comment)
+        assertEquals(1, result.id)
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        val comment = Comment( fromId = 1, date = 25822, text = "comment")
+
+        createComment(1 , comment)
     }
 }

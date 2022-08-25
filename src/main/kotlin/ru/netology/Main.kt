@@ -43,7 +43,7 @@ data class Like(
 )
 
 data class Comment(
-    val id: Int,
+    val id: Int = 0,
     val fromId: Int,
     val date: Int,
     val text: String,
@@ -75,12 +75,12 @@ object WallService {
         return false
     }
 
-    fun createComment(postId: Int, text: String): Comment {
+    fun createComment(postId: Int, comment: Comment): Comment {
         for (post in posts) {
             if (postId == post.id) {
                 idForComments++
-                val comment = Comment(idForComments, 1, 25822, "text")
-                comments += comment
+                val newComment = comment.copy(id = idForComments)
+                comments += newComment
                 return comments.last()
             }
         }
@@ -90,6 +90,7 @@ object WallService {
     fun clear() {
         posts = emptyArray()
         id = 0
+        idForComments = 0
     }
 }
 
