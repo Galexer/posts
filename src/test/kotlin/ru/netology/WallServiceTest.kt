@@ -11,8 +11,14 @@ class WallServiceTest {
     @Test
     fun addPost() {
         val likes1 = Like(0,false,true)
-        val post1 = Post(0,0, 0,11_8_22, likes = likes1)
+       /* to check if attachments work (it works)
+        val link = Link("www.good.link", "My Link", "the best link")
+        val attachLink = AttachLink(link = link)
+        var attachmentPost1 = emptyArray<Attachment>()
+        attachmentPost1 += attachLink
+        val post1 = Post(0,0, 0,11_8_22, likes = likes1, attachments = attachmentPost1)*/
 
+        val post1 = Post(0,0, 0,11_8_22, likes = likes1)
         val result = add(post1)
 
         assertEquals(1, result.id)
