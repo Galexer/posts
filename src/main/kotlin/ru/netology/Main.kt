@@ -40,9 +40,19 @@ data class Like(
     val canLike: Boolean
 )
 
+data class Comment(
+    val id: Int = 0,
+    val fromId: Int,
+    val date: Int,
+    val text: String,
+    val attachments: Array<Attachment> = emptyArray()
+)
+
 object WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
     private var id = 0
+    private var idForComments = 0
 
     fun add(post: Post): Post {
         id++
@@ -63,8 +73,23 @@ object WallService {
         return false
     }
 
+    fun createComment(postId: Int, comment: Comment): Comment {
+        for (post in posts) {
+            if (postId == post.id) {
+                idForComments++
+                val newComment = comment.copy(id = idForComments)
+                comments += newComment
+                return comments.last()
+            }
+        }
+        throw PostNotFoundException("seems, that post with this id is not exist...")
+    }
+
     fun clear() {
         posts = emptyArray()
         id = 0
+        idForComments = 0
     }
 }
+
+class PostNotFoundException(val text: String) : RuntimeException(text)

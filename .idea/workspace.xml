@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f122c2d-d80e-4d3c-8201-06ad8ea077ba" name="Changes" comment="tests!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/netology/WallServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/netology/WallServiceTest.kt" afterDir="false" />
-    </list>
+    <list default="true" id="5f122c2d-d80e-4d3c-8201-06ad8ea077ba" name="Changes" comment="fixed exception" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +43,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -97,7 +99,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="WallServiceTest.addPost" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="WallServiceTest.createComment" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -110,7 +112,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.WallServiceTest.addPost&quot;" />
+            <option value="&quot;ru.netology.WallServiceTest.createComment&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -176,10 +178,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.WallServiceTest" />
+        <item itemvalue="Gradle.WallServiceTest.createComment" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Gradle.WallServiceTest.updateFalse" />
         <item itemvalue="Gradle.WallServiceTest.updateGood" />
-        <item itemvalue="Gradle.WallServiceTest.addPost" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +215,28 @@
       <option name="project" value="LOCAL" />
       <updated>1660577386673</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added assertTrue/assertFalse">
+      <created>1661443868840</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661443868840</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added comment services">
+      <created>1661445908395</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661445908395</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed exception">
+      <created>1661771982256</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661771982256</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +244,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Comments" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -231,6 +266,9 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="fun for posts and tests" />
     <MESSAGE value="tests!" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests!" />
+    <MESSAGE value="added assertTrue/assertFalse" />
+    <MESSAGE value="added comment services" />
+    <MESSAGE value="fixed exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed exception" />
   </component>
 </project>
