@@ -1,5 +1,7 @@
 package ru.netology
 
+import ru.netology.WallService.createComment
+
 fun main() {
 }
 abstract class Attachment(val type: String)
@@ -40,9 +42,27 @@ data class Like(
     val canLike: Boolean
 )
 
+data class Comment(
+    val id: Int = 0,
+    val fromId: Int,
+    val date: Int,
+    val text: String,
+    val attachments: Array<Attachment> = emptyArray()
+)
+data class Report(
+        val reportId: Int,
+        val ownerId: Int,
+        val commentId: Int,
+        val reason: Int
+)
+
 object WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
+    private var reports = emptyArray<Report>()
     private var id = 0
+    private var idForComments = 0
+    private var idReport = 0
 
     fun add(post: Post): Post {
         id++
@@ -63,8 +83,45 @@ object WallService {
         return false
     }
 
+    fun createComment(postId: Int, comment: Comment): Comment {
+        for (post in posts) {
+            if (postId == post.id) {
+                idForComments++
+                val newComment = comment.copy(id = idForComments)
+                comments += newComment
+                return comments.last()
+            }
+        }
+        throw PostNotFoundException("Post with this id not found")
+    }
+
+    fun complain (ownerId: Int, commentId: Int, reason: Int): Report{
+        val arrayOfReasons: Array<String> = arrayOf("spam", "children's ponography", "extremism", "violence",
+            "drug propaganda", "adult material", " insult; abuse")
+        for (comment in comments) {
+            if (commentId == comment.id) {
+                if(reason in 0..arrayOfReasons.size) {
+                    idReport++
+                    val report = Report(idReport, ownerId, commentId, reason)
+                    reports += report
+                    return reports.last()
+                } else {
+                    throw ReasonNotFoundException("This reason for complain not found")
+                }
+            }
+        }
+        throw CommentNotFoundException("Comment with this id not found")
+    }
+
     fun clear() {
         posts = emptyArray()
         id = 0
+        idForComments = 0
     }
 }
+
+class PostNotFoundException(val text: String) : RuntimeException(text)
+
+class CommentNotFoundException(val text: String) : RuntimeException(text)
+
+class ReasonNotFoundException(val text: String) : RuntimeException(text)

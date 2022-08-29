@@ -5,6 +5,8 @@ import org.junit.Before
 import org.junit.Test
 import ru.netology.WallService.add
 import ru.netology.WallService.update
+import ru.netology.WallService.createComment
+import ru.netology.WallService.complain
 
 class WallServiceTest {
 
@@ -56,5 +58,53 @@ class WallServiceTest {
 
         val result = update(update)
         assertFalse(result)
+    }
+
+    @Test
+    fun createComment() {
+        val likes1 = Like(userLikes = false, canLike = true)
+        add(Post(0,0, 0,11_8_22, likes =  likes1))
+        val comment = Comment( fromId = 1, date = 25822, text = "comment")
+
+        val result = createComment(1 , comment)
+        assertEquals(1, result.id)
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrowCreateComment() {
+        val comment = Comment( fromId = 1, date = 25822, text = "comment")
+
+        createComment(1 , comment)
+    }
+
+    @Test
+    fun complain() {
+        val likes1 = Like(userLikes = false, canLike = true)
+        add(Post(0, 0, 0, 11_8_22, likes = likes1))
+        val comment = Comment(fromId = 1, date = 25822, text = "comment")
+        createComment(1, comment)
+        val rightComplain = Report(1,1, 1, 1)
+
+        val result = complain(1, 1, 1)
+        assertEquals(result, rightComplain)
+    }
+
+    @Test(expected = CommentNotFoundException::class)
+    fun shouldThrowComment() {
+        val likes1 = Like(userLikes = false, canLike = true)
+        add(Post(0, 0, 0, 11_8_22, likes = likes1))
+        val comment = Comment(fromId = 1, date = 25822, text = "comment")
+        createComment(1, comment)
+
+        complain(1, 2, 1)
+    }
+    @Test(expected = ReasonNotFoundException::class)
+    fun shouldThrowReason() {
+        val likes1 = Like(userLikes = false, canLike = true)
+        add(Post(0, 0, 0, 11_8_22, likes = likes1))
+        val comment = Comment(fromId = 1, date = 25822, text = "comment")
+        createComment(1, comment)
+
+        complain(1, 1, 10)
     }
 }
