@@ -84,7 +84,7 @@ object WallService {
                 return comments.last()
             }
         }
-        throw PostNotFoundException()
+        throw PostNotFoundException("seems, that post with this id is not exist...")
     }
 
     fun clear() {
@@ -94,4 +94,4 @@ object WallService {
     }
 }
 
-class PostNotFoundException(val text: String = "seems, that post with this id is not exist...") : RuntimeException(text)
+class PostNotFoundException(val text: String) : RuntimeException(text)
