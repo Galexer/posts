@@ -1,7 +1,5 @@
 package ru.netology
 
-import ru.netology.WallService.createComment
-
 fun main() {
 }
 abstract class Attachment(val type: String)

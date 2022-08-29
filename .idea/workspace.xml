@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f122c2d-d80e-4d3c-8201-06ad8ea077ba" name="Changes" comment="added comment services">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/netology/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/netology/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/netology/WallServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/netology/WallServiceTest.kt" afterDir="false" />
-    </list>
+    <list default="true" id="5f122c2d-d80e-4d3c-8201-06ad8ea077ba" name="Changes" comment="fixed exception" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +75,7 @@
       <recent name="ru.netology" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.WallServiceTest.createComment">
+  <component name="RunManager" selected="Gradle.WallServiceTest">
     <configuration name="WallServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -181,9 +177,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.WallServiceTest" />
         <item itemvalue="Gradle.WallServiceTest.createComment" />
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Gradle.WallServiceTest" />
         <item itemvalue="Gradle.WallServiceTest.updateFalse" />
         <item itemvalue="Gradle.WallServiceTest.updateGood" />
       </list>
@@ -233,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661445908395</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed exception">
+      <created>1661771982256</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661771982256</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +268,7 @@
     <MESSAGE value="tests!" />
     <MESSAGE value="added assertTrue/assertFalse" />
     <MESSAGE value="added comment services" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comment services" />
+    <MESSAGE value="fixed exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed exception" />
   </component>
 </project>
